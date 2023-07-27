@@ -30,12 +30,14 @@ const FeedbackForm = () => {
   });
   return (
     <AnimatePresence>
-      <div className="h-screen px-2 flex justify-center items-center bg-[#ddd]">
+      <div className="h-screen px-3 flex justify-center items-center bg-[#ddd]">
         {showSuccess ? (
           <motion.div
             initial={{ opacity: 1, y: -0 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }} className="transition-all duration-300 px-24 py-10 bg-white rounded-lg items-center">
+            exit={{ opacity: 0 }}
+            className="transition-all duration-300 px-24 py-10 bg-white rounded-lg items-center"
+          >
             <h2 className="text-3xl text-center text-[#0C134F] mb-4 mt-4">
               Thanks for your feedback! 🌞
             </h2>

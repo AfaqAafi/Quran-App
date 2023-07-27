@@ -5,6 +5,7 @@ import FeedbackForm from "./pages/FeedbackForm"
 import About from "./pages/About";
 import Reciter from "./pages/Reciter";
 import Translator from "./pages/Translator";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/reciter" element={<Reciter />} />
           <Route path="/translator" element={<Translator />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
