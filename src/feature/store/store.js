@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ToggleSidebarSlice from "../slice/ToggleSidebarSlice";
-import fetchChapterSlice from "../slice/fetchChapterSlice";
+import ToggleSidebarSlice from "../slices/ToggleSidebarSlice";
+import fetchChapterSlice from "../slices/fetchChapterSlice";
+import fetchChapterByIdSlice from "../slices/fetchChapterByIdSlice";
 
 export const store = configureStore({
   reducer: {
     sidebar: ToggleSidebarSlice,
     chapters: fetchChapterSlice,
+    chaptersById: fetchChapterByIdSlice,
   },
 });

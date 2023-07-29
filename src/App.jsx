@@ -7,6 +7,7 @@ import Reciter from "./pages/Reciter";
 import Translator from "./pages/Translator";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Chapter from "./pages/Chapter";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/change_reciter" element={<Reciter />} />
           <Route path="/change_translation" element={<Translator />} />
+          <Route path="/chapter/:id" element={<Chapter />} />
         </Routes>
         <Footer />
       </BrowserRouter>

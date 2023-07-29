@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchChapters } from "../feature/slice/fetchChapterSlice";
+import { fetchChapters } from "../feature/slices/fetchChapterSlice";
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
@@ -23,6 +24,14 @@ const Search = () => {
 
     return () => clearTimeout(idTimout);
   }, [searchText]);
+
+  const handleronDelayBlur = () => {
+    const id = setTimeout(() => {
+      setOnBlurState(false);
+    }, 200);
+    clearTimeout(id);
+  };
+
   return (
     <div className="relative">
       <input
@@ -31,13 +40,14 @@ const Search = () => {
         placeholder="What do you want to read?"
         onChange={(e) => setSearchText(e.target.value)}
         value={searchText}
-        onBlur={() => setOnBlurState(false)}
+        onBlur={handleronDelayBlur}
         onFocus={() => setOnBlurState(true)}
       />
       {searchText.length > 1 && onBlurState && (
         <div className="absolute w-full bg-slate-700 px-6 py-4 flex flex-col gap-1">
           {data?.map((x) => (
-            <div
+            <Link
+              to={`/chapter/${x.id}`}
               key={x.id}
               className="flex p-1 justify-between cursor-pointer rounded duration-300 bg-slate-900 hover:bg-[#0C134F]"
             >
@@ -47,7 +57,7 @@ const Search = () => {
               <h4 className="pr-3 text-2xl text-white font-semibold">
                 {x.name_complex}
               </h4>
-            </div>
+            </Link>
           ))}
         </div>
       )}

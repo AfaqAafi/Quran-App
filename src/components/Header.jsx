@@ -3,7 +3,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useDispatch } from "react-redux";
-import { toggleSidebarAction } from "../feature/slice/ToggleSidebarSlice";
+import { toggleSidebarAction } from "../feature/slices/ToggleSidebarSlice";
 
 const Header = () => {
     const dispatch = useDispatch();
