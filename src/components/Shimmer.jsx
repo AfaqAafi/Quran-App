@@ -7,7 +7,7 @@ const Shimmer = () => {
       {data.map((item, index) => (
         <div
           key={index}
-          className="h-[140px] border-b-2 border-green-500 duration-75 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-200 rounded animate-pulse"
+          className="h-[140px] border-b-2 border-green-500 duration-100 bg-gradient-to-r from-gray-500 via-gray-100 to-gray-200 rounded animate-pulse"
         ></div>
       ))}
     </div>

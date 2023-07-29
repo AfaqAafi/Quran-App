@@ -127,10 +127,10 @@ const FeedbackForm = () => {
               initial={{ opacity: 1, y: -160 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="mt-6 sm:mt-0 sm:h-[530px]"
+              className="mt-6 sm:mt-0 sm:h-[550px] max-w-2xl"
             >
               <img
-                className="h-full rounded"
+                className="w-full h-full rounded"
                 src="https://images.pexels.com/photos/6935076/pexels-photo-6935076.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt=""
               />

@@ -7,27 +7,37 @@ import {
 } from "../feature/slices/fetchChapterByIdSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Shimmer from "../components/Shimmer";
+import { fetchChaptersTranslationById } from "../feature/slices/fetchChapterTranslation";
 
 const Chapter = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const chapterById = useSelector((store) => store.chaptersById.chaptersById);
-  // console.log(chapterById[0].verses);
+  const chapterByIdTranlation = useSelector(
+    (store) => store.chaptersByIdTranslation.chapterTranslation
+  );
+
   useEffect(() => {
     dispatch(fetchByIdChapters(id));
 
     return () => dispatch(clearDispatch());
   }, []);
 
+  // useEffect(() => {
+  //   dispatch(fetchChaptersTranslationById(id));
+  // }, []);
+
+  // console.log(chapterByIdTranlation);
+
   return (
     <div className="relative">
-      <div className="absolute top-0 right-10 flex items-center gap-3">
-        <button className="px-12 text-white text-[21px] rounded-full border-2 hover:text-[#0C134F] hover:border-[#0C134F] hover:bg-white py-4 bg-[#0C134F]">
+      <div className="absolute justify-center -top-16 left-0 right-0 xl:top-0 xl:right-2 flex xl:justify-end items-center gap-3">
+        <button className="px-3 text-white text-[17px] rounded-full border-2 hover:text-[#0C134F] hover:border-[#0C134F] hover:bg-white py-2 bg-[#0C134F]">
           Translation
         </button>
-        <FaPlay className="text-[#0C134F] text-5xl hover:text-black cursor-pointer" />
+        <FaPlay className="text-[#0C134F] text-3xl hover:text-black cursor-pointer" />
       </div>
-      <div className="max-w-[1800px]  px-8 mx-auto mt-10 pb-10">
+      <div className="max-w-[900px]  px-8 mx-auto mt-[80px] xl:mt-10 pb-10">
         <img
           src="/images/verse.png"
           className="object-contain mb-8 bg-gray-300 rounded px-8 py-4"
@@ -45,7 +55,7 @@ const Chapter = () => {
                   className="cursor-pointer border-b-2 border-green-500 py-8"
                 >
                   <p
-                    className="text-5xl leading-relaxed tracking-widest text-center text-green-600 font-amiri-quran"
+                    className="text-5xl leading-relaxed tracking-widest text-center text-[#0C134F] font-amiri-quran"
                     dir="rtl"
                   >
                     {verse.text_indopak}{" "}
