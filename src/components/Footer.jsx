@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="right-0 w-ful bg-[#2A2F4F]">
+    <div className="w-ful bg-[#0C134F]">
       <div className="px-24 flex flex-col gap-14 sm:gap-0 sm:flex-row justify-around items-start py-8">
         <div>
-          <h2 className="text-white pb-6 font-medium text-2xl sm:text-3xl  transition-all duration-300 hover:text-gray-400">
+          <h2 className="text-white pb-6 font-medium text-xl sm:text-2xl  transition-all duration-300 hover:text-gray-400">
             Quran wih ❤️ By M.Afaq
           </h2>
           <p className="text-white transition-all duration-300 hover:text-gray-400 uppercase text-[19px] leading-7">
@@ -14,7 +14,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h2 className="text-white pb-6 font-medium text-2xl sm:text-3xl transition-all duration-300 hover:text-gray-400">
+          <h2 className="text-white pb-6 font-medium text-xl sm:text-2xl  transition-all duration-300 hover:text-gray-400">
             Beautiful Voices
           </h2>
           <p className="text-white transition-all duration-300 hover:text-gray-400 text-[19px] uppercase leading-7">
@@ -23,7 +23,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h2 className="text-white pb-6 font-medium text-2xl sm:text-3xl transition-all duration-300 hover:text-gray-400">
+          <h2 className="text-white pb-6 font-medium text-xl sm:text-2xl  transition-all duration-300 hover:text-gray-400">
             Links
           </h2>
           <ul>

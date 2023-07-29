@@ -6,19 +6,20 @@ import About from "./pages/About";
 import Reciter from "./pages/Reciter";
 import Translator from "./pages/Translator";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
         <Header />
         <Sidebar />
         <Routes>
-          <Route path="/feedback" element={<FeedbackForm />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/send_feedback" element={<FeedbackForm />} />
           <Route path="/about" element={<About />} />
-          <Route path="/reciter" element={<Reciter />} />
-          <Route path="/translator" element={<Translator />} />
+          <Route path="/change_reciter" element={<Reciter />} />
+          <Route path="/change_translation" element={<Translator />} />
         </Routes>
         <Footer />
       </BrowserRouter>
