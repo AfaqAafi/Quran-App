@@ -21,7 +21,11 @@ export const fetchChaptersTranslationById = createAsyncThunk(
 export const fetchChapterTranslationSlice = createSlice({
   name: "chapterTranslationById",
   initialState,
-  reducers: {},
+  reducers: {
+    clearDispatchTranslationById: (state) => {
+      state.chapterTranslation = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchChaptersTranslationById.pending, (state) => {
       state.isLoading = true;
@@ -37,4 +41,6 @@ export const fetchChapterTranslationSlice = createSlice({
   },
 });
 
+export const { clearDispatchTranslationById } =
+  fetchChapterTranslationSlice.actions;
 export default fetchChapterTranslationSlice.reducer;

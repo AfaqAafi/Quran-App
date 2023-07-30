@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import {
@@ -7,9 +7,13 @@ import {
 } from "../feature/slices/fetchChapterByIdSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Shimmer from "../components/Shimmer";
-import { fetchChaptersTranslationById } from "../feature/slices/fetchChapterTranslation";
+import {
+  clearDispatchTranslationById,
+  fetchChaptersTranslationById,
+} from "../feature/slices/fetchChapterTranslation";
 
 const Chapter = () => {
+  const [showTranslation, setShowTranslation] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
   const chapterById = useSelector((store) => store.chaptersById.chaptersById);
@@ -23,17 +27,24 @@ const Chapter = () => {
     return () => dispatch(clearDispatch());
   }, []);
 
-  // useEffect(() => {
-  //   dispatch(fetchChaptersTranslationById(id));
-  // }, []);
+  useEffect(() => {
+    dispatch(fetchChaptersTranslationById(id));
 
-  // console.log(chapterByIdTranlation);
+    return () => dispatch(clearDispatchTranslationById());
+  }, []);
 
+  function cleanHTMLTags(input) {
+    const doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.body.textContent || "";
+  }
   return (
     <div className="relative">
       <div className="absolute justify-center -top-16 left-0 right-0 xl:top-0 xl:right-2 flex xl:justify-end items-center gap-3">
-        <button className="px-3 text-white text-[17px] rounded-full border-2 hover:text-[#0C134F] hover:border-[#0C134F] hover:bg-white py-2 bg-[#0C134F]">
-          Translation
+        <button
+          onClick={() => setShowTranslation(!showTranslation)}
+          className="px-3 text-white text-[17px] border rounded-full hover:text-[#0C134F] hover:border-[#0C134F] hover:bg-white py-2 bg-[#0C134F]"
+        >
+          {showTranslation ? "Hide Translation" : "Show Translation"}
         </button>
         <FaPlay className="text-[#0C134F] text-3xl hover:text-black cursor-pointer" />
       </div>
@@ -47,8 +58,8 @@ const Chapter = () => {
           <Shimmer />
         ) : (
           <div className="w-full shadow-lg flex flex-col gap-1 bg-gray-300 rounded">
-            {chapterById[0]?.verses?.map((verse) => {
-              // const translation = Translation[index];
+            {chapterById[0]?.verses?.map((verse, index) => {
+              const translation = chapterByIdTranlation[0]?.translations[index];
               return (
                 <div
                   key={verse.id}
@@ -60,6 +71,20 @@ const Chapter = () => {
                   >
                     {verse.text_indopak}{" "}
                   </p>
+
+                  {showTranslation && (
+                    <div className="mt-7">
+                      <div
+                        className="text-[#0C134F] text-2xl text-center"
+                        dir="rtl"
+                      >
+                        {cleanHTMLTags(translation?.text)}
+                      </div>
+                    </div>
+                  )}
+                  <span className="p-2 m-2 text-green-500 italic">
+                    {" " + verse.verse_key}
+                  </span>
                 </div>
               );
             })}
