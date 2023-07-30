@@ -20,7 +20,6 @@ const Chapter = () => {
   const chapterByIdTranlation = useSelector(
     (store) => store.chaptersByIdTranslation.chapterTranslation
   );
-
   useEffect(() => {
     dispatch(fetchByIdChapters(id));
 
@@ -28,7 +27,7 @@ const Chapter = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchChaptersTranslationById(id));
+    dispatch(fetchChaptersTranslationById(parseInt(id)));
 
     return () => dispatch(clearDispatchTranslationById());
   }, []);

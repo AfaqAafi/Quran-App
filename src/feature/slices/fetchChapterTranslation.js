@@ -6,12 +6,14 @@ const initialState = {
   isLoading: false,
   error: null,
 };
-let translationId = 131;
+
 export const fetchChaptersTranslationById = createAsyncThunk(
   "fetchChaptersTranslationById/fetchChapters",
-  async (id) => {
+  async (id, translationId) => {
+    let myTranslatedId = translationId.getState().translationId.translationId;
+    console.log(myTranslatedId, id);
     const res = await axios(
-      `https://api.quran.com/api/v4/quran/translations/${translationId}?chapter_number=${id}`
+      `https://api.quran.com/api/v4/quran/translations/${myTranslatedId}?chapter_number=${id}`
     );
     const data = await res.data;
     return data;
