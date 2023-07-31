@@ -23,7 +23,7 @@ const Header = () => {
             className="text-white cursor-pointer text-3xl transition-all duration-300 hover:text-gray-400"
           />
           <h2 className="hidden sm:flex text-white cursor-pointer font-medium text-[22px] transition-all duration-300 hover:text-gray-400">
-            Quran wih ❤️ By M.Afaq
+            Quran made with ❤️ By M.Afaq
           </h2>
           <h2 className="sm:hidden flex text-white cursor-pointer font-medium text-[22px] transition-all duration-300 hover:text-gray-400">
             Quran
