@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { fetchLanguageRoute } from "../feature/slices/fetchLanguageRouteSlice";
-import { setTranslationId } from "../feature/slices/ManageTranslationId";
+import { setTranslationId } from "../feature/slices/manageTranslationId";
 
 const Translator = () => {
   const { name } = useParams();
