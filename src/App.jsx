@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Chapter from "./pages/Chapter";
 import Languages from "./pages/Languages";
+import Player from "./pages/Player";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/language" element={<Languages />} />
           <Route path="/translation/:name" element={<Translator />} />
           <Route path="/chapter/:id" element={<Chapter />} />
+          <Route path="/player/:id" element={<Player />} />
         </Routes>
         <Footer />
       </BrowserRouter>

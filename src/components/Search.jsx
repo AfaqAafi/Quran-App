@@ -13,7 +13,6 @@ const Search = () => {
   useEffect(() => {
     dispatch(fetchChapters());
   }, []);
-
   useEffect(() => {
     let idTimout = setTimeout(() => {
       let filteredSearch = chapters[0]?.chapters?.filter((chapter) =>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   clearDispatch,
   fetchByIdChapters,
@@ -11,12 +11,14 @@ import {
   clearDispatchTranslationById,
   fetchChaptersTranslationById,
 } from "../feature/slices/fetchChapterTranslation";
+import { setReciterId } from "../feature/slices/manageReciterId";
 
 const Chapter = () => {
   const [showTranslation, setShowTranslation] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
   const chapterById = useSelector((store) => store.chaptersById.chaptersById);
+  const navigate = useNavigate();
   const chapterByIdTranlation = useSelector(
     (store) => store.chaptersByIdTranslation.chapterTranslation
   );
@@ -36,6 +38,12 @@ const Chapter = () => {
     const doc = new DOMParser().parseFromString(input, "text/html");
     return doc.body.textContent || "";
   }
+
+  const handlePlayAudio = () => {
+    dispatch(setReciterId(id));
+    navigate(`/player/${id}`);
+  };
+
   return (
     <div className="relative">
       <div className="absolute justify-center -top-16 left-0 right-0 xl:top-0 xl:right-2 flex xl:justify-end items-center gap-3">
@@ -45,7 +53,10 @@ const Chapter = () => {
         >
           {showTranslation ? "Hide Translation" : "Show Translation"}
         </button>
-        <FaPlay className="text-[#0C134F] text-3xl hover:text-black cursor-pointer" />
+        <FaPlay
+          className="text-[#0C134F] text-3xl hover:text-black cursor-pointer"
+          onClick={handlePlayAudio}
+        />
       </div>
       <div className="max-w-[900px]  px-8 mx-auto mt-[80px] xl:mt-10 pb-10">
         <img

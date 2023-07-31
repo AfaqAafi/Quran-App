@@ -19,7 +19,7 @@ const Languages = () => {
           </h1>
           {language.length === 0 ? (
             <h1 className="text-3xl text-center w-full h-screen">
-              Please wait Loading fetching.............
+              Please wait Loading fetching...
             </h1>
           ) : (
             <div className="flex flex-col">
