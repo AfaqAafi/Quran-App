@@ -90,11 +90,21 @@ const Player = () => {
         </div>
 
         <div className="flex justify-around pt-5 items-center w-full">
-          <TbPlayerSkipBackFilled onClick={handleBackward} />
+          <TbPlayerSkipBackFilled
+            className="cursor-pointer text-xl sm:text-2xl"
+            onClick={handleBackward}
+          />
           <div onClick={togglePlayPause}>
-            {isPlaying ? <FaPause /> : <BsPlayFill />}
+            {isPlaying ? (
+              <FaPause className="cursor-pointer text-xl sm:text-2xl" />
+            ) : (
+              <BsPlayFill className="cursor-pointer text-xl sm:text-2xl" />
+            )}
           </div>
-          <TbPlayerSkipForwardFilled onClick={handleForward} />
+          <TbPlayerSkipForwardFilled
+            className="cursor-pointer text-xl sm:text-2xl"
+            onClick={handleForward}
+          />
         </div>
       </div>
     </div>

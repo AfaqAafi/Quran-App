@@ -20,7 +20,7 @@ const Home = () => {
       <div className="pb-10 relative">
         <img
           src="./images/bg.png"
-          className="bg-center w-full h-[500px]"
+          className="bg-center w-full h-[600px]"
           alt="myImage"
         />
         <div className="flex px-3 flex-col gap-4 w-full h-full absolute top-0 mt-14 md:mt-0 justify-start md:justify-center items-center">
@@ -57,7 +57,8 @@ const Home = () => {
         ) : (
           chapters[0]?.chapters?.map((chapter) => {
             return (
-              <Link to={`/chapter/${chapter.id}`}
+              <Link
+                to={`/chapter/${chapter.id}`}
                 className=" w-full  
                  py-5 px-5 text-white bg-[#0C134F] hover:cursor-pointer "
                 key={chapter.id}

@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
 const FeedbackForm = () => {
   const [showSuccess, setShowSuccess] = useState(false);
@@ -39,9 +40,12 @@ const FeedbackForm = () => {
             <h2 className="text-3xl text-center text-[#0C134F] mb-4 mt-4">
               Thanks for your feedback! 🌞
             </h2>
-            <p className="text-xl underline text-center text-[#0C134F] mb-4 mt-4 duration-300 hover:text-black hover:cursor-pointer">
+            <Link
+              to="/"
+              className="text-xl underline text-center text-[#0C134F] mb-4 mt-4 duration-300 hover:text-black hover:cursor-pointer"
+            >
               Navigate back to home
-            </p>
+            </Link>
           </motion.div>
         ) : (
           <div className="flex flex-col lg:flex-row justify-center gap-4 lg:gap-1 w-full items-center">

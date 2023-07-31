@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,45 +29,50 @@ const Footer = () => {
           </h2>
           <ul>
             <li className="mb-2">
-              <a
+              <Link
+                to="/"
                 className="text-white text-[21px] transition-all duration-300 hover:text-gray-400"
                 href=""
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="mb-2">
-              <a
+              <Link
+                to="/about"
                 href=""
                 className="text-white text-[21px] transition-all duration-300 hover:text-gray-400"
               >
                 About
-              </a>
+              </Link>
             </li>
 
             <li className="mb-2">
-              <a
+              <Link
+                to="/change_reciter"
                 className="text-white text-[21px] transition-all duration-300 hover:text-gray-400"
                 href=""
               >
                 Read Quran
-              </a>
+              </Link>
             </li>
             <li className="mb-2">
-              <a
+              <Link
+                to={`/player/${1}`}
                 className="text-white text-[21px] transition-all duration-300 hover:text-gray-400"
                 href=""
               >
                 Play Audio
-              </a>
+              </Link>
             </li>
             <li className="mb-2">
-              <a
+              <Link
+                to="/language"
                 className="text-white text-[21px] transition-all duration-300 hover:text-gray-400"
                 href=""
               >
                 Translation Menus
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

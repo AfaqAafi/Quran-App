@@ -4,15 +4,15 @@ import { FaPlay } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useDispatch } from "react-redux";
 import { toggleSidebarAction } from "../feature/slices/ToggleSidebarSlice";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-
-    const togglerSidebar = () => {
-        dispatch(toggleSidebarAction());
-    }
-
+  const togglerSidebar = () => {
+    dispatch(toggleSidebarAction());
+  };
 
   return (
     <div className="w-full bg-[#0C134F] h-[70px]">
@@ -30,9 +30,18 @@ const Header = () => {
           </h2>
         </div>
         <div className="flex items-center gap-3 sm:gap-8">
-          <TfiWorld className="w-5 h-6 text-white cursor-pointer transition-all duration-300 hover:text-gray-400" />
-          <AiFillHome className="w-6 h-6  text-white cursor-pointer transition-all duration-300 hover:text-gray-400" />
-          <FaPlay className="w-4 h-6  text-white cursor-pointer transition-all duration-300 hover:text-gray-400" />
+          <TfiWorld
+            onClick={() => navigate("/change_reciter")}
+            className="w-5 h-6 text-white cursor-pointer transition-all duration-300 hover:text-gray-400"
+          />
+          <AiFillHome
+            onClick={() => navigate("/")}
+            className="w-6 h-6  text-white cursor-pointer transition-all duration-300 hover:text-gray-400"
+          />
+          <FaPlay
+            onClick={() => navigate(`/player/${1}`)}
+            className="w-4 h-6  text-white cursor-pointer transition-all duration-300 hover:text-gray-400"
+          />
         </div>
       </div>
     </div>

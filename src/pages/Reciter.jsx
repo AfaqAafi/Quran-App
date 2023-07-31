@@ -28,7 +28,6 @@ const Reciter = () => {
         ) : (
           <div className="flex flex-col">
             {reciterList[0]?.reciters?.map((reciter) => {
-              console.log(reciter.id, "reciters");
               return (
                 <Link
                   to={`/player/1`}
