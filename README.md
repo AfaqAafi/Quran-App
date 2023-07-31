@@ -51,4 +51,5 @@ To run this project, install it locally using npm:
     $ cd Quran-App
     $ npm install
     $ npm run start
-![Screenshot (8)](https://github.com/AfaqAafi/Quran-App/assets/107768535/519570d9-53eb-4a25-b52d-8e5b8f0ff509)
+    
+![Screenshot (5)](https://github.com/AfaqAafi/Quran-App/assets/107768535/215d273b-2f01-45d4-8225-56e20761fc98)
