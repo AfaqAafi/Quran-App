@@ -9,7 +9,7 @@ import fetchChapterByIdSlice from "../slices/fetchChapterByIdSlice";
 import fetchChapterTranslationSlice from "../slices/fetchChapterTranslation";
 import fetchLanguageSlice from "../slices/fetchLanguageSlice";
 import fetchLanguageRouteSlice from "../slices/fetchLanguageRouteSlice";
-import manageTranslationIdSlice from "../slices/ManageTranslationId";
+import manageTranslationIdSlice from "../slices/manageTranslationId";
 import fetchReciterSlice from "../slices/fetchReciterSlice";
 import fetchAudioSlice from "../slices/fetchAudioSlice";
 import manageReciterIdSlice from "../slices/manageReciterId";
