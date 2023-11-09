@@ -51,5 +51,5 @@ To run this project, install it locally using npm:
     $ cd Quran-App
     $ npm install
     $ npm run start
-    
+    API For Reciters // https://www.mp3quran.net/ar
 ![Screenshot (5)](https://github.com/AfaqAafi/Quran-App/assets/107768535/215d273b-2f01-45d4-8225-56e20761fc98)
