@@ -10,14 +10,19 @@ const initialState = {
 export const fetchReciter = createAsyncThunk(
   "fetchReciter/reciter",
   async () => {
-    const res = await axios(
-      `https://api.quran.com/api/v4/resources/chapter_reciters?language=en`
-    );
-    const data = await res.data;
-    return data;
+    try {
+      const response = await axios.get(
+        "https://www.mp3quran.net/api/v3/reciters?language=ar"
+      );
+      
+      return response.data;
+    } catch (error) {
+      
+      console.error("Error fetching reciters:", error);
+      throw error;
+    }
   }
 );
-
 export const fetchReciterSlice = createSlice({
   name: "reciter",
   initialState,

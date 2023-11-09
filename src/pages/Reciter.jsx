@@ -6,22 +6,23 @@ import {
 } from "../feature/slices/fetchReciterSlice";
 import { Link } from "react-router-dom";
 import { setReciterId } from "../feature/slices/manageReciterId";
+import Shimmer from "../components/Shimmer";
 
 const Reciter = () => {
   const reciterList = useSelector((store) => store.reciter.reciterData);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchReciter());
 
     return () => dispatch(clearReciter());
-  }, []);
+  }, [dispatch]);
+
 
   return (
     <div>
       <div className=" flex flex-col mb-4 p-2 justify-center">
         <h1 className="mb-2 text-xl sm:text-3xl py-5">Choose Reciter:</h1>
-        {reciterList[0]?.reciters?.length === 0 ? (
+        {reciterList?.length === 0 ? (
           <h1 className="text-3xl text-center w-full h-screen">
             Please wait Loading fetching....
           </h1>
